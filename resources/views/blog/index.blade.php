@@ -23,19 +23,19 @@
                     Últimos posts
                 </h1>
             </div>
-            <div class="grid grid-cols-2" style="border: 2px solid red;">
+            <div class="grid grid-cols-2">
                 @foreach ($twoLatestPosts as $post)
                 <article class="mx-2 py-3 px-2 bg-blue-900 rounded-md flex flex-row">
                     <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
-                    <div class="ml-2 flex flex-col" style="border: 2px solid red">
-                        <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat transition hover:border-b-2 hover:border-white font-semibold">
+                    <div class="ml-2 flex flex-col">
+                        <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat transition hover:border-b-2 hover:border-white font-semibold self-start">
                             {{ $post->title }}
                         </a>
                         <small class="block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
                         <p class="text-sm my-4">
                             {{ $post->excerpt }}
                         </p>
-                        <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm self-end justify-end">
+                        <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm self-start">
                             Ler agora
                         </a>
                     </div>
@@ -44,29 +44,30 @@
             </div>
         </div>
     </main>
-    <div class="mt-2 text-center">
-        <h2 class="text-5xl font-montserrat">
+    <div class="mt-2 text-center mx-6">
+        <h2 class="text-5xl font-montserrat font-medium text-white border-b-2 py-2 border-white">
             Todos os posts
         </h2>
-        <form action="{{ route('blog.search') }}" method="GET">
+        {{-- <form action="{{ route('blog.search') }}" method="GET">
             <label for="searchString">Pesquisar post</label>
             <input type="text" placeholder="Pesquisar post" name="searchString" id="searchString">
             <button type="submit" class="px-3 py-1 bg-blue-900 text-white">Pesquisar</button>
-        </form>
+        </form> --}}
     </div>
-    <div class="mx-10">
+    <div class="mx-6 my-1">
         <div class="grid grid-cols-2">
             @foreach ($allPosts as $post)
-            <article>
-                <div class="border-b-2 rounded-sm border-slate-400 py-3">
-                    <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat font-medium hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition">
+            <article class="mx-2 py-1 px-2 bg-white rounded-md flex flex-row">
+                <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
+                <div class="ml-2 flex flex-col">
+                    <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
                         {{ $post->title }}
                     </a>
                     <small class="block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
                     <p class="text-sm my-4">
                         {{ $post->excerpt }}
                     </p>
-                    <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 hover:text-white px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm">
+                    <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 hover:text-white px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm self-start">
                         Ler agora
                     </a>
                 </div>
