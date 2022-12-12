@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/dashboard/categories', function () {
+    return view('categories');
+})->middleware(['auth', 'verified'])->name('categories');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
