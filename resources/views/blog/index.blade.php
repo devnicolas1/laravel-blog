@@ -57,7 +57,10 @@
     <div class="mx-6 my-1">
         <div class="grid grid-cols-2">
             @foreach ($allPosts as $post)
-            <article class="mx-2 py-1 px-2 bg-white rounded-md flex flex-row">
+            @if ($post->id === $twoLatestPosts[0]['id'] || $post->id === $twoLatestPosts[1]['id'])
+                @continue
+            @endif
+            <article class="mx-2 py-3 px-2 my-2 bg-white rounded-md flex flex-row">
                 <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
                 <div class="ml-2 flex flex-col">
                     <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
