@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -20,9 +21,21 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/dashboard/categories', function () {
-    return view('categories');
-})->middleware(['auth', 'verified'])->name('categories');
+// Route::get('/dashboard/categories/edit/{id}', function () {
+//     return view('categories');
+// })->middleware(['auth', 'verified'])->name('categories');
+
+// Route::get('/dashboard/categories', function () {
+//     return view('categories');
+// })->middleware(['auth', 'verified'])->name('categories');
+
+Route::prefix('/dashboard/categories')->name('categories.')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', [CategoriesController::class, 'index'])->name('index');
+    Route::post('/', [CategoriesController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('edit');
+    Route::match(['put', 'patch'] ,'/{id}', [CategoriesController::class, 'update'])->name('update');
+    Route::delete('/{id}', [CategoriesController::class, 'destroy'])->name('destroy');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
