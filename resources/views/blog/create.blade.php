@@ -10,6 +10,15 @@
     <div class="px-20 mt-3">
         <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="flex flex-row">
+                @foreach ($categories as $category)
+                <div class="bg-white font-roboto py-2 px-4 rounded-md mx-1 my-2">
+                    <label>
+                        {{ $category->category }}  <input type="checkbox" name="{{ $category->category }}" id="{{ $category->category }}" value="{{ $category->id }}">
+                    </label>    
+                </div>
+                @endforeach
+            </div>
             <input type="text" name="title" id='title' placeholder="Título" class="w-full h-10 text-2xl my-2 p-1 rounded bg-slate-100">
             <input type="text" name="excerpt" id='excerpt' placeholder="Excerto" class="w-full h-10 text-1xl my-2 p-1 rounded bg-slate-100">
             <textarea name="body" id="body" class="w-full h-80 my-2 p-1 rounded bg-slate-100" placeholder="Hora de escrever!"></textarea>

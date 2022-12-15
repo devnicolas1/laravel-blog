@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return view('blog.create', [
+            'categories' => Category::orderBy('category', 'asc')->get()
+        ]);
     }
 
     /**
@@ -39,7 +42,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create([
+        $post = Post::create([
             'user_id' => Auth::id(),
             'metaTitle' => $request->metaTitle,
             'metaDescription' => $request->metaDescription,
@@ -50,6 +53,8 @@ class PostsController extends Controller
             'body' => $request->body,
             'image_path' => $this->storeImage($request),
         ]);
+
+        $this->relateCategories($post, $request);
 
         return redirect(route('dashboard'));
     }
@@ -133,5 +138,17 @@ class PostsController extends Controller
         $finalImagePath = explode('public\\', $finalImagePath); // creates an array, where $finalImagePath[1] equals to the one usable on asset()
 
         return $finalImagePath[1];
+    }
+
+    private function relateCategories($post, $requestWithCategories) {
+        $categories = $requestWithCategories->except('_token', 'title', 'excerpt', 'body', 'metaTitle', 'metaDescription', 'metaKeywords', 'image_path');
+
+        foreach ($categories as $categoryId) {
+            $categoriesId[] = $categoryId;
+        }
+
+        for($i = 0; $i < count($categoriesId); $i++) {
+            $post->categories()->attach($categoriesId[$i]);
+        }
     }
 }
