@@ -9,18 +9,17 @@
     <title>{{ $post->metaTitle }}</title>
     @vite('resources/js/app.js')
 </head>
-<body>
-    <header class="flex justify-items-start items-center px-10 py-2 bg-blue-900 text-white font-semibold">
-        <a href="{{ route('home') }}" class="mx-2 hover:bg-emerald-600 px-4 py-0.5 rounded-sm transition">
+<body class="text-white font-roboto bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+    <header class="flex justify-items-start items-center px-10 py-1 bg-white text-slate-900 font-semibold">
+        <a href="{{ route('home') }}" class="mx-2 hover:bg-blue-900 hover:text-white px-4 py-0.5 rounded-sm transition">
             Página Inicial
         </a>
-        <a href="{{ route('blog.index') }}" class="mx-2 hover:bg-emerald-600 px-4 py-0.5 rounded-sm transition">
+        <a href="{{ route('blog.index') }}" class="mx-2 hover:bg-blue-900 hover:text-white px-4 py-0.5 rounded-sm transition">
             Blog
         </a>
     </header>
     <main class="text-center px-10 my-4 font-roboto">
         <article>
-            <img src="{{ asset($post->image_path) }}" alt="" srcset="" class="w-full">
             <h1 class="text-5xl font-montserrat">{{ $post->title }}</h1>
             <h2 class="italic font-montserrat mt-1">{{ $post->excerpt }}</h2>
             <small class="mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
