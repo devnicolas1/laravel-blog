@@ -48,11 +48,12 @@
         <h2 class="text-5xl font-montserrat font-medium text-white border-b-2 py-2 border-white">
             Todos os posts
         </h2>
-        {{-- <form action="{{ route('blog.search') }}" method="GET">
-            <label for="searchString">Pesquisar post</label>
-            <input type="text" placeholder="Pesquisar post" name="searchString" id="searchString">
-            <button type="submit" class="px-3 py-1 bg-blue-900 text-white">Pesquisar</button>
-        </form> --}}
+        <form action="{{ route('blog.search') }}" method="GET" class="mt-3">
+            <input type="text" placeholder="O que você quer aprender hoje?" name="searchString" id="searchString" class="text-white placeholder-gray-400 italic text-center border-2 border-white transition w-2/4 bg-transparent rounded-3xl">
+            <div class="mt-2">
+                <button class="bg-emerald-600 hover:bg-slate-900 transition text-white font-medium px-3 py-1 rounded-sm">Pesquisar</button>
+            </div>
+        </form>
     </div>
     <div class="mx-6 my-1">
         <div class="grid grid-cols-2">

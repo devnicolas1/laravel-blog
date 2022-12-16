@@ -21,14 +21,6 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-// Route::get('/dashboard/categories/edit/{id}', function () {
-//     return view('categories');
-// })->middleware(['auth', 'verified'])->name('categories');
-
-// Route::get('/dashboard/categories', function () {
-//     return view('categories');
-// })->middleware(['auth', 'verified'])->name('categories');
-
 Route::prefix('/dashboard/categories')->name('categories.')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [CategoriesController::class, 'index'])->name('index');
     Route::post('/', [CategoriesController::class, 'store'])->name('store');
