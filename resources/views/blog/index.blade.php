@@ -51,7 +51,7 @@
         <form action="{{ route('blog.search') }}" method="GET" class="mt-3">
             <input type="text" placeholder="O que você quer aprender hoje?" name="searchString" id="searchString" class="text-white placeholder-gray-400 italic text-center border-2 border-white transition w-2/4 bg-transparent rounded-3xl">
             <div class="mt-2">
-                <button class="bg-emerald-600 hover:bg-slate-900 transition text-white font-medium px-3 py-1 rounded-sm">Pesquisar</button>
+                <button class="bg-emerald-600 hover:bg-slate-900 transition text-white font-medium px-3 py-1 rounded-sm font-montserrat">Pesquisar</button>
             </div>
         </form>
     </div>
