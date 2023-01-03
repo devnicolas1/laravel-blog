@@ -28,11 +28,11 @@
                 <article class="mx-2 py-3 px-2 bg-blue-900 rounded-md flex flex-row">
                     <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
                     <div class="ml-2 flex flex-col">
-                        <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat transition hover:border-b-2 hover:border-white font-semibold self-start">
+                        <a href="{{ route('blog.show', $post->id) }}" class="h-1/4 text-3xl font-montserrat transition hover:border-b-2 hover:border-white font-semibold self-start">
                             {{ $post->title }}
                         </a>
-                        <small class="block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
-                        <p class="text-sm my-4">
+                        <small class="block text-xs mt-1 h-1/6">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
+                        <p class="text-sm my-4 h-2/4">
                             {{ $post->excerpt }}
                         </p>
                         <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm self-start">
@@ -64,11 +64,11 @@
             <article class="mx-2 py-3 px-2 my-2 bg-white rounded-md flex flex-row">
                 <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
                 <div class="ml-2 flex flex-col">
-                    <a href="{{ route('blog.show', $post->id) }}" class="text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
+                    <a href="{{ route('blog.show', $post->id) }}" class="h-1/4 text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
                         {{ $post->title }}
                     </a>
-                    <small class="block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
-                    <p class="text-sm my-4">
+                    <small class="h-1/6 block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>
+                    <p class="text-sm my-4 h-2/4">
                         {{ $post->excerpt }}
                     </p>
                     <a href="{{ route('blog.show', $post->id) }}" class="hover:bg-emerald-600 hover:text-white px-3 py-1 bg-slate-900 text-white transition font-montserrat font-medium rounded-sm self-start">
