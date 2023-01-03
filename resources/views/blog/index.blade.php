@@ -23,9 +23,9 @@
                     Últimos posts
                 </h1>
             </div>
-            <div class="grid grid-cols-2">
+            <div class="grid custom-grid-cols">
                 @foreach ($twoLatestPosts as $post)
-                <article class="mx-2 py-3 px-2 bg-blue-900 rounded-md flex flex-row">
+                <article class="mx-2 py-3 px-2 bg-blue-900 rounded-md flex flex-row my-2">
                     <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
                     <div class="ml-2 flex flex-col">
                         <a href="{{ route('blog.show', $post->id) }}" class="h-1/4 text-3xl font-montserrat transition hover:border-b-2 hover:border-white font-semibold self-start">
@@ -56,7 +56,7 @@
         </form>
     </div>
     <div class="mx-6 my-1">
-        <div class="grid grid-cols-2">
+        <div class="grid custom-grid-cols">
             @foreach ($allPosts as $post)
             @if ($post->id === $twoLatestPosts[0]['id'] || $post->id === $twoLatestPosts[1]['id'])
                 @continue
@@ -64,7 +64,7 @@
             <article class="mx-2 py-3 px-2 my-2 bg-white rounded-md flex flex-row">
                 <img src="{{ asset($post->image_path) }}" alt="" srcset="" width="25%">
                 <div class="ml-2 flex flex-col">
-                    <a href="{{ route('blog.show', $post->id) }}" class="h-1/4 text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
+                    <a href="{{ route('blog.show', $post->id) }}" class="h-2/4 text-3xl font-montserrat font-semibold hover:text-blue-900 hover:border-b-2 hover:border-blue-900 transition self-start">
                         {{ $post->title }}
                     </a>
                     <small class="h-1/6 block text-xs mt-1">Publicado em {{ $post->created_at->format('d/m/Y') }}</small>

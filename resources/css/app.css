@@ -8,3 +8,13 @@
 .text-breaker {
     white-space: pre-wrap;
 }
+
+.custom-grid-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media only screen and (max-width: 768px) {
+    .custom-grid-cols {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
