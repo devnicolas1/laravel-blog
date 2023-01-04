@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="mt-5">
-                <a href="{{ route('blog.index') }}" class="bg-transparent hover:bg-emerald-600 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded transition">
+                <a href="{{ route('blog.indaex') }}" class="bg-transparent hover:bg-emerald-600 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded transition">
                     Acesse meu blog
                 </a>
             </div>
