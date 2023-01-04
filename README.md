@@ -10,7 +10,9 @@ Com tantas opções já existentes para se escrever artigos na internet, parece 
 - Front end com Tailwind CSS
 - Armazenar e utilizar imagens com Laravel
 - Banco de dados SQLite (usado para desenvolvimento local)
+- Banco de dados MySQL (usado no servidor de produção)
 - Rotas e prioridade de rotas
+- Deploy em Cloud Hosting
 
 Esta lista será atualizada conforme o projeto for desenvolvido!
 
