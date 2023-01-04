@@ -17,10 +17,10 @@
                 Sou um desenvolvedor backend, atualmente focado em PHP Laravel.
             </p>
             <div>
-                <a href="" class="mx-2">
+                <a href="https://github.com/devnicolas1" target="_blank" class="mx-2">
                     <img src="{{ asset('images/githubIcon.png') }}" alt="GitHub Link" width="4%" class="mt-1" style="display: inline;">
                 </a>
-                <a href="" class="mx-2">
+                <a href="https://www.linkedin.com/in/devnicolas1/" target="_blank" class="mx-2">
                     <img src="{{ asset('images/linkedinIcon.png') }}" alt="GitHub Link" width="4%" class="mt-1" style="display: inline;">
                 </a>
             </div>
