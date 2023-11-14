@@ -1,3 +1,5 @@
+**Este blog foi feito no passado como forma de aprendizado, e não só não reflete o meu conhecimento atual como desenvolvedor, como também não é onde eu publico artigos atualmente. Você pode encontrar meus artigos em [yesibuiltit.com](https://yesibuiltit)**
+
 # **Meu blog pessoal - devnicolas.com.br**
 Neste blog, planejo compartilhar um pouco das coisas que aprendi sobre programação, e que continuarei aprendendo com o passar do tempo.
 
